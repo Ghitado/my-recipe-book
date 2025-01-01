@@ -8,7 +8,7 @@ using MySqlConnector;
 
 namespace MyRecipeBook.Infrastructure.Migrations
 {
-    public class DatabaseMigration
+    public static class DatabaseMigration
     {
         public static void Migrate(DatabaseType databaseType, string connectionString, IServiceProvider serviceProvider)
         {
