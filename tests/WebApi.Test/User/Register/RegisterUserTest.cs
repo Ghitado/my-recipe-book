@@ -1,20 +1,19 @@
 ﻿using CommonTestUtilities.Requests;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
-using MyRecipeBook.Exceptions.ExceptionsBase;
 using MyRecipeBook.Exceptions;
+using System.Globalization;
 using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json;
 using WebApi.Test.InlineData;
-using System.Globalization;
 
 namespace WebApi.Test.User.Register;
-public class RegisterUserTest : IClassFixture<WebApplicationFactory<Program>>
+public class RegisterUserTest : IClassFixture<CustomWebApplicationFactory>
 {
     private readonly HttpClient _httpClient;
 
-    public RegisterUserTest(WebApplicationFactory<Program> factory) => _httpClient = factory.CreateClient();
+    public RegisterUserTest(CustomWebApplicationFactory factory) => _httpClient = factory.CreateClient();
 
     [Fact]
     public async Task Success()
