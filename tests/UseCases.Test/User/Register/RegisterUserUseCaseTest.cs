@@ -4,6 +4,7 @@ using CommonTestUtilities.Repositories;
 using CommonTestUtilities.Requests;
 using FluentAssertions;
 using MyRecipeBook.Application.UseCases.User.Register;
+using MyRecipeBook.Domain.Extensions;
 using MyRecipeBook.Exceptions;
 using MyRecipeBook.Exceptions.ExceptionsBase;
 
@@ -58,8 +59,8 @@ public class RegisterUserUseCaseTest
         var readRepositoryBuilder = new UserReadOnlyRepositoryBuilder();
         var unitOfWork = UnitOfWorkBuilder.Build();
 
-        if(string.IsNullOrEmpty(email) == false)
-            readRepositoryBuilder.ExistActiveUserWithEmail(email);
+        if(string.IsNullOrEmpty(email).IsFalse())
+            readRepositoryBuilder.ExistActiveUserWithEmail(email!);
 
 
         return new RegisterUserUseCase(writeRepository, readRepositoryBuilder.Build(), unitOfWork, mapper, passwordEncripter);
