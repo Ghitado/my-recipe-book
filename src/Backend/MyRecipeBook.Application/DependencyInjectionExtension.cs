@@ -31,7 +31,7 @@ namespace MyRecipeBook.Application
 
         private static void AddPasswordEncripter(IServiceCollection services, IConfiguration configuration)
         {
-            var additionalKey = configuration.GetValue<string>("Setting:Password:AdditionalKey");
+            var additionalKey = configuration.GetValue<string>("Settings:Password:AdditionalKey");
 
             services.AddScoped(option => new PasswordEncripter(additionalKey!));
         }
