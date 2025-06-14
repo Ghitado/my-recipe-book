@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>0bf6d0c3-75ec-40ea-94e3-74a24e28d5c0</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +15,15 @@
     <ProjectReference Include="..\..\Shared\MyRecipeBook.Communication\MyRecipeBook.Communication.csproj" />
     <ProjectReference Include="..\..\Shared\MyRecipeBook.Exceptions\MyRecipeBook.Exceptions.csproj" />
     <ProjectReference Include="..\MyRecipeBook.Application\MyRecipeBook.Application.csproj" />
+    <ProjectReference Include="..\MyRecipeBook.Infrastructure\MyRecipeBook.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.Test.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
